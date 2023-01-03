@@ -14,7 +14,8 @@ function App() {
 
   return (
     <div className="App">
-        <Header/>
+        <Header />
+        <br/>
         <button onClick={onToggleButton}>Toggle</button>
     </div>
   );
