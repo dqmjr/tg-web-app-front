@@ -11,18 +11,17 @@ const Form = () => {
     useEffect( () => {
         tg.MainButton.setParams( {
                 text: 'Заказать'
-        }
-        )
+        })
         }, []
     )
 
-    useEffect(() => {
-        if (!address || !number){
-            tg.MainButton.hide();
-        }else {
-            tg.MainButton.show();
-        }
-    }, [address, number])
+    // useEffect(() => {
+    //     if (!address || !number){
+    //         tg.MainButton.hide();
+    //     }else {
+    //         tg.MainButton.show();
+    //     }
+    // }, [address, number])
 
     const onChangeAddress = (e) => {
         setAddress(e.target.value)
@@ -52,10 +51,12 @@ const Form = () => {
                 onChange={onChangeNumber}
             />
 
-            <select value={subject} onChange={onChangeSubject} className={'select'}>
+            <select
+                value={subject}
+                onChange={onChangeSubject}
+                className={'select'}>
                 <option value="legal">Юр. лицо</option>
                 <option value="physical">Физ. лицо</option>
-
             </select>
         </div>
     );
