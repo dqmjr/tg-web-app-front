@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './Form.css';
 import {useTelegram} from "../Hooks/useTelegram";
-import * as path from "path";
 const Form = () => {
     const [address, setAddress] = useState('');
     const [number, setNumber] = useState('');
