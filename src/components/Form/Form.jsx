@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './Form.css';
 import {useTelegram} from "../Hooks/useTelegram";
+import * as path from "path";
 const Form = () => {
+    <p>QWE</p>
     const [address, setAddress] = useState('');
     const [number, setNumber] = useState('');
     const [subject, setSubject] = useState('physical');
