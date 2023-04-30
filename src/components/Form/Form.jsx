@@ -8,6 +8,22 @@ const Form = () => {
 
     const {tg} = useTelegram();
 
+    const onSendData = useCallback(() => {
+        const data = {
+            address,
+            number,
+            subject,
+        }
+        tg.sendData(JSON.stringify(data));
+    }, [])
+
+    useEffect(() => {
+        tg.onEvent('backButtonClicked', onSendData);
+        return() => {
+            tg.offEvent('backButtonClicked', onSendData)
+        }
+    }, [])
+
     useEffect( () => {
         tg.MainButton.setParams( {
                 text: 'Заказать'
